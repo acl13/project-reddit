@@ -1,1 +1,4 @@
-
+.border-bottom {
+  border-bottom: 1px solid #eeecec;
+  padding-bottom: 1em;
+}
