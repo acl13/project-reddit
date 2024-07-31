@@ -13,12 +13,15 @@ function onSubmit() {
     const postText = document.createElement("p");
     const comments = document.createElement("div");
     const displayComments = document.createElement("a");
+    const removePost = document.createElement("a");
 
     displayComments.textContent = "comments";
+    removePost.textContent = "remove";
     postText.textContent = `${userPost.value} - Posted By: ${userName.value}`;
     post.classList.add("border-bottom");
     posts.appendChild(post);
     post.appendChild(displayComments);
+    post.appendChild(removePost);
     post.appendChild(postText);
     post.appendChild(comments);
     userName.value = "";
@@ -32,14 +35,10 @@ function onSubmit() {
       }
     });
 
-    // const removePost = document.createElement("a");
-    // removePost.textContent = "remove";
-    // post.appendChild(removePost);
-    // removePost.addEventListener("click", function () {
-    //   post.remove();
-    // });
+    removePost.addEventListener("click", function () {
+      post.remove();
+    });
 
-    // TODO: add collapsible comment form to each post
     const commentsForm = document.createElement("form");
     const commentTextContainer = document.createElement("div");
     const commentNameContainer = document.createElement("div");
