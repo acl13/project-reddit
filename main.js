@@ -67,11 +67,16 @@ function onSubmit() {
       event.preventDefault();
       const comment = document.createElement("span");
       const removeComment = document.createElement("a");
+      const lineBreak = document.createElement("br");
       comment.textContent = `${commentText.value} - Posted By: ${commentName.value}`;
       removeComment.textContent = "remove";
       comments.appendChild(removeComment);
       comments.append(" ");
       comments.appendChild(comment);
+      comments.appendChild(lineBreak);
+
+      commentName.value = "";
+      commentText.value = "";
     });
 
     post.appendChild(commentsForm);
