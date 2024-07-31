@@ -28,9 +28,11 @@ function onSubmit() {
     userPost.value = "";
 
     displayComments.addEventListener("click", function () {
-      if (commentsForm.classList.contains("hide")) {
+      if (comments.classList.contains("hide")) {
+        comments.classList.remove("hide");
         commentsForm.classList.remove("hide");
       } else {
+        comments.classList.add("hide");
         commentsForm.classList.add("hide");
       }
     });
