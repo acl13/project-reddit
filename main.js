@@ -71,12 +71,17 @@ function onSubmit() {
       comment.textContent = `${commentText.value} - Posted By: ${commentName.value}`;
       removeComment.textContent = "remove";
       comments.appendChild(removeComment);
-      comments.append(" ");
+      removeComment.append(" ");
       comments.appendChild(comment);
-      comments.appendChild(lineBreak);
+      comment.appendChild(lineBreak);
 
       commentName.value = "";
       commentText.value = "";
+
+      removeComment.addEventListener("click", function () {
+        comment.remove();
+        removeComment.remove();
+      });
     });
 
     post.appendChild(commentsForm);
