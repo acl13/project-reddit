@@ -10,7 +10,7 @@ function onSubmit() {
     alert("Please fill out both fields before submitting");
   } else {
     const post = document.createElement("div");
-    const postText = document.createElement("p");
+    const postText = document.createElement("span");
     const comments = document.createElement("div");
     const displayComments = document.createElement("a");
     const removePost = document.createElement("a");
@@ -20,8 +20,11 @@ function onSubmit() {
     postText.textContent = `${userPost.value} - Posted By: ${userName.value}`;
     post.classList.add("border-bottom");
     posts.appendChild(post);
+    post.appendChild(postText);
     post.appendChild(displayComments);
+    post.append(" ");
     post.appendChild(removePost);
+    post.append(" ");
     post.appendChild(postText);
     post.appendChild(comments);
     userName.value = "";
@@ -62,8 +65,12 @@ function onSubmit() {
 
     commentSubmit.addEventListener("click", function (event) {
       event.preventDefault();
-      const comment = document.createElement("p");
+      const comment = document.createElement("span");
+      const removeComment = document.createElement("a");
       comment.textContent = `${commentText.value} - Posted By: ${commentName.value}`;
+      removeComment.textContent = "remove";
+      comments.appendChild(removeComment);
+      comments.append(" ");
       comments.appendChild(comment);
     });
 
