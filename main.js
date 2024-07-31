@@ -12,25 +12,25 @@ function onSubmit() {
     const post = document.createElement("div");
     const postText = document.createElement("p");
     const comments = document.createElement("div");
+    const displayComments = document.createElement("a");
 
+    displayComments.textContent = "comments";
     postText.textContent = `${userPost.value} - Posted By: ${userName.value}`;
     post.classList.add("border-bottom");
     posts.appendChild(post);
+    post.appendChild(displayComments);
     post.appendChild(postText);
     post.appendChild(comments);
     userName.value = "";
     userPost.value = "";
 
-    // const displayComments = document.createElement("a");
-    // displayComments.textContent = "comments";
-    // post.appendChild(displayComments);
-    // displayComments.addEventListener("click", function () {
-    //   if (commentsForm.classList.contains("hide")) {
-    //     commentsForm.classList.remove("hide");
-    //   } else {
-    //     commentsForm.classList.add("hide");
-    //   }
-    // });
+    displayComments.addEventListener("click", function () {
+      if (commentsForm.classList.contains("hide")) {
+        commentsForm.classList.remove("hide");
+      } else {
+        commentsForm.classList.add("hide");
+      }
+    });
 
     // const removePost = document.createElement("a");
     // removePost.textContent = "remove";
